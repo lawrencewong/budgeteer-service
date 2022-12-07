@@ -11,7 +11,6 @@ class CreateUserBudgets < ActiveRecord::Migration[7.0]
       t.integer :entertainment
       t.integer :clothing
       t.integer :savings
-      t.integer :gas
       t.integer :internet
 
       t.timestamps

@@ -11,12 +11,6 @@ module Types
     field :entertainment, Integer, null: false
     field :clothing, Integer, null: false
     field :savings, Integer, null: false
-    field :gas, Integer, null: false, method: :gas
     field :internet, Integer, null: false
-
-
-    def gas
-      object.gas.presence || 0
-    end
   end
 end

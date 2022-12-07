@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_07_154617) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_202307) do
   create_table "user_budgets", force: :cascade do |t|
     t.integer "income"
     t.integer "housing"
@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_154617) do
     t.integer "entertainment"
     t.integer "clothing"
     t.integer "savings"
-    t.integer "gas"
     t.integer "internet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

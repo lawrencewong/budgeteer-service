@@ -13,6 +13,8 @@ module Types
     end
 
     def user_budgets_by_income(income:, variance:)
+      income *= 100
+      variance *= 100
       UserBudget.where(income: income - variance..income + variance)
     end
   end

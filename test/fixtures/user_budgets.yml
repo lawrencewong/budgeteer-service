@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  income: 1
+  housing: 1
+  utilities: 1
+  food: 1
+  transportation: 1
+  healthcare: 1
+  insurance: 1
+  entertainment: 1
+  clothing: 1
+  savings: 1
+  gas: 1
+  internet: 1
+
+two:
+  income: 1
+  housing: 1
+  utilities: 1
+  food: 1
+  transportation: 1
+  healthcare: 1
+  insurance: 1
+  entertainment: 1
+  clothing: 1
+  savings: 1
+  gas: 1
+  internet: 1

@@ -81,16 +81,17 @@ class DataLoader
         }
       )
     end
+
+    # Swallow the logger
     old_logger = ActiveRecord::Base.logger
     ActiveRecord::Base.logger = nil
 
-    p "Start time: #{Time.now.to_s}"
     data.each_with_index do |user, index|
       print "#{index.to_s} "
 
       UserBudget.create income: user[:income], housing: user[:housing], utilities: user[:utilities], food: user[:food], transportation: user[:transportation], healthcare: user[:healthcare], insurance: user[:insurance], entertainment: user[:entertainment], clothing: user[:clothing], savings: user[:savings], internet: user[:internet]
     end
-    p "End time: #{Time.now.to_s}"
+
     ActiveRecord::Base.logger = old_logger
 
     return

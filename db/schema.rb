@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_142648) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_165623) do
   create_table "user_budgets", force: :cascade do |t|
     t.integer "income"
     t.integer "housing"
@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_142648) do
     t.integer "internet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "debt_repayment"
     t.index ["income"], name: "index_user_budgets_on_income"
   end
 

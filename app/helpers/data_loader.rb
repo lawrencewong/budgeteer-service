@@ -62,6 +62,8 @@ class DataLoader
     clothing = generate_normal(mean: 3344 / 12, std: 20, count: count)
     savings = generate_normal(mean: 10233 / 12, std: 20, count: count)
     internet = generate_normal(mean: 80, std: 20, count: count)
+    debtRepayment = generate_normal(mean: 350, std: 20, count: count)
+
 
     data = []
     count.times  do |index|
@@ -78,6 +80,7 @@ class DataLoader
           clothing: clothing[index],
           savings: savings[index],
           internet: internet[index],
+          debtRepayment: debtRepayment[index],
         }
       )
     end
@@ -89,7 +92,7 @@ class DataLoader
     data.each_with_index do |user, index|
       print "#{index.to_s} "
 
-      UserBudget.create income: user[:income], housing: user[:housing], utilities: user[:utilities], food: user[:food], transportation: user[:transportation], healthcare: user[:healthcare], insurance: user[:insurance], entertainment: user[:entertainment], clothing: user[:clothing], savings: user[:savings], internet: user[:internet]
+      UserBudget.create income: user[:income], housing: user[:housing], utilities: user[:utilities], food: user[:food], transportation: user[:transportation], healthcare: user[:healthcare], insurance: user[:insurance], entertainment: user[:entertainment], clothing: user[:clothing], savings: user[:savings], internet: user[:internet], debt_repayment: user[:debtRepayment]
     end
 
     ActiveRecord::Base.logger = old_logger

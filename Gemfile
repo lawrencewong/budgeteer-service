@@ -58,4 +58,3 @@ gem 'graphiql-rails', '1.7.0', group: :development
 gem 'rubystats', '~> 0.3.0'
 gem "matrix", "~> 0.4.2"
 
-gem 'rack-cors'

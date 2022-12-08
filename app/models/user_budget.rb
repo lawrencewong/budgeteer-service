@@ -4,7 +4,8 @@ class UserBudget < ApplicationRecord
   def self.by_income_variance(income:, variance:)
     Rails.cache.fetch(
       "#{CACHE_KEY_PREFIX}/#{income}/#{variance}",
-      expires_in: 12.hours) do
+      expires_in: 12.hours
+    ) do
       income *= 100
       variance *= 100
 

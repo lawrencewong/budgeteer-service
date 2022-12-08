@@ -3,7 +3,7 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
     field :user_budgets, [UserBudgetType], null: false
-    field :user_budgets_by_income, [UserBudgetType], null: true do
+    field :user_budgets_by_income, [UserBudgetType], null: true  do
       argument :income, Integer, required: true
       argument :variance, Integer, required: true
     end
@@ -13,9 +13,7 @@ module Types
     end
 
     def user_budgets_by_income(income:, variance:)
-      income *= 100
-      variance *= 100
-      UserBudget.where(income: income - variance..income + variance)
+      UserBudget.by_income_variance(income: income, variance: variance)
     end
   end
 end

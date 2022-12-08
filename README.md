@@ -20,6 +20,10 @@ DataLoader.call
 
 ## Starting Server
 ```sh
+bundle exec rails dev:cache
+```
+
+```sh
 bundle exec rails server
 ```
 
@@ -27,3 +31,8 @@ bundle exec rails server
 ```sh
 http://127.0.0.1:3001/graphiql
 ```
+
+
+
+### Resources
+https://www.howtographql.com/graphql-ruby/0-introduction/

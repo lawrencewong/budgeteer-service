@@ -46,23 +46,30 @@ class DataLoader
     create(base_income: 15700)
   end
 
+  def self.reload_all
+    UserBudget.destroy_all
+
+    call
+  end
+
   # 1 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1110022201
   # 2 https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=3610058801
   # 3 https://www12.statcan.gc.ca/census-recensement/
   # One caveat is that the number below is the MEAN across all census data not incremental by income
   def self.create(base_income: 3066, count: 500)
+    jitter = base_income / 100
     income = generate_normal(mean: base_income, std: 20, count: count)
-    housing = generate_normal(mean: 20200 / 12, std: 20, count: count)
-    utilities = generate_normal(mean: 2535 / 12, std: 20, count: count)
-    food = generate_normal(mean: 10311 / 12, std: 20, count: count)
-    transportation = generate_normal(mean: 12737 / 12, std: 20, count: count)
-    healthcare = generate_normal(mean: 2780 / 12, std: 20, count: count)
-    insurance = generate_normal(mean: 5297 / 12, std: 20, count: count)
-    entertainment = generate_normal(mean: 4624 / 12, std: 20, count: count)
-    clothing = generate_normal(mean: 3344 / 12, std: 20, count: count)
-    savings = generate_normal(mean: 10233 / 12, std: 20, count: count)
-    internet = generate_normal(mean: 80, std: 20, count: count)
-    debtRepayment = generate_normal(mean: 350, std: 20, count: count)
+    housing = generate_normal(mean: (20200 / 12) + jitter, std: 20, count: count)
+    utilities = generate_normal(mean: (2535 / 12) + jitter, std: 20, count: count)
+    food = generate_normal(mean: (10311 / 12) + jitter, std: 20, count: count)
+    transportation = generate_normal(mean: (12737 / 12) + jitter, std: 20, count: count)
+    healthcare = generate_normal(mean: (2780 / 12) + jitter, std: 20, count: count)
+    insurance = generate_normal(mean: (5297 / 12) + jitter, std: 20, count: count)
+    entertainment = generate_normal(mean: (4624 / 12) + jitter, std: 20, count: count)
+    clothing = generate_normal(mean: (3344 / 12) + jitter, std: 20, count: count)
+    savings = generate_normal(mean: (10233 / 12) + jitter, std: 20, count: count)
+    internet = generate_normal(mean: 80 + jitter, std: 20, count: count)
+    debtRepayment = generate_normal(mean: 350 + jitter, std: 20, count: count)
 
 
     data = []

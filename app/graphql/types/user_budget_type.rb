@@ -12,6 +12,6 @@ module Types
     field :clothing, Integer, null: false
     field :savings, Integer, null: false
     field :internet, Integer, null: false
-    field :debtRepayment, Integer, null: false, method: :debt_repayment
+    field :debt, Integer, null: false, method: :debt_repayment
   end
 end
